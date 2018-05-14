@@ -19,9 +19,9 @@ Read through the deliverables below to begin building out the following five cla
 * `Guest.most_active_critic()` returns the guest with most amount of recipe reviews
 
 **Instance Methods:**
-* `guest.rsvp(invite, rsvp_status)` takes in a boolean value (True or False) and updates a guest's rsvp status
+* `guest.rsvp(invite, rsvp_status)` takes in a boolean value (True or False) and updates a guest's rsvp status. It should return the rsvp_status status
 * `guest.number_of_invites()` returns the number of dinner party invites a guest has recieved 
-* `guest.review_recipe(recipe, rating, comment)` adds a guest's review with a rating and comment to a recipe 
+* `guest.review_recipe(recipe, rating, comment)` adds a guest's review with a rating and comment to a recipe. Returns the given recipe's reviews
 * `guest.favorite_recipe()` returns the given guest's favorite recipe
 
 ### Invite
@@ -38,6 +38,8 @@ Read through the deliverables below to begin building out the following five cla
 * `DinnerParty.all()` returns a list of all dinner party instances
 
 **Instance Methods:**
+* `dinner_party.reviews()` returns a list of reviews for the recipes of a given dinner party
+* `dinner_party.recipes()` returns a list of recipes for the given dinner party
 * `dinner_party.recipe_count()` returns the number of recipes for the given dinner party
 * `dinner_party.highest_rated_recipe()` returns the highest rated recipe for the given dinner party
 * `dinner_party.number_of_attendees()` returns the number of guests who accepted their invite for the dinner party
@@ -48,6 +50,7 @@ Read through the deliverables below to begin building out the following five cla
 
 **Instance Methods:**
 * `review.rating` returns the given review's rating
+* `review.recipe` returns the given review's recipe
 * `review.reviewer` returns the given review's reviewer (guest instance)
 * `review.comment` returns the given review's comment, if there is one
 
@@ -58,7 +61,8 @@ Read through the deliverables below to begin building out the following five cla
 * `Recipe.bottom_three()` returns a list with the three recipe instances with the lowest average rating
 
 **Instance Methods:**
-* `recipe.top_five_reviews` returns a list with the five review instances with the highest rating for the given recipe
+* `recipe.reviews()` returns a list of reviews for the given recipe
+* `recipe.top_five_reviews()` returns a list with the five review instances with the highest rating for the given recipe
 
 Great work!
 
