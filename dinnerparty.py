@@ -1,0 +1,2 @@
+class DinnerParty:
+    pass

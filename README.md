@@ -1,0 +1,68 @@
+
+# Python - Object Relationships Project
+
+## Introduction
+In this lab we are going to practice object relationships in Python with an emphasis on has-many-through relationships. We will be building out a domain model for Guests, Invites, Dinner Parties, Recipes, and Reviews. A guest will have a collection of invites, which will relate a guest to a dinner party, thus creating the has many through relationship between a user and a dinner party. Just like any good dinner party there will be more than just one thing to eat, which means that a dinner party will have a collection of recipes. A recipe also has many reviews, which are given directly by guests, so, guests will also have many reviews.
+
+Read through the deliverables below to begin building out the following five classes and to figure out additional information about their relationships. 
+> **Note:** You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process. If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.
+
+## Objectives
+* Define classes according to their approproate relationships
+* Create instance and class methods that leverage the has many through relationships
+
+### Guest
+**Class Methods:**
+* `Guest.all()` returns a list of all guest instances
+* `Guest.most_popular()` returns the guest invited to the most dinner parties
+* `Guest.toughest_critic()` returns the guest with lowest average rating for recipe reviews
+* `Guest.most_active_critic()` returns the guest with most amount of recipe reviews
+
+**Instance Methods:**
+* `guest.rsvp(invite, rsvp_status)` takes in a boolean value (True or False) and updates a guest's rsvp status
+* `guest.number_of_invites()` returns the number of dinner party invites a guest has recieved 
+* `guest.review_recipe(recipe, rating, comment)` adds a guest's review with a rating and comment to a recipe 
+* `guest.favorite_recipe()` returns the given guest's favorite recipe
+
+### Invite
+**Class Methods:**
+* `Invite.all()` returns a list of all invite instances
+
+**Instance Methods:**
+* `invite.accepted` returns a boolean value (true or false) for whether the the guest accepted the invite or not
+* `invite.guest` returns the given invite's guest instance
+* `invite.dinner_party` returns the given invite's dinner party instance
+
+### DinnerParty
+**Class Methods:**
+* `DinnerParty.all()` returns a list of all dinner party instances
+
+**Instance Methods:**
+* `dinner_party.recipe_count()` returns the number of recipes for the given dinner party
+* `dinner_party.highest_rated_recipe()` returns the highest rated recipe for the given dinner party
+* `dinner_party.number_of_attendees()` returns the number of guests who accepted their invite for the dinner party
+
+### Review
+**Class Methods:**
+* `Review.all()` returns a list of all invite instances
+
+**Instance Methods:**
+* `review.rating` returns the given review's rating
+* `review.reviewer` returns the given review's reviewer (guest instance)
+* `review.comment` returns the given review's comment, if there is one
+
+### Recipe
+**Class Methods:**
+* `Recipe.all()` returns a list of all invite instances
+* `Recipe.top_three()` returns a list with the three recipe instances with the highest average rating
+* `Recipe.bottom_three()` returns a list with the three recipe instances with the lowest average rating
+
+**Instance Methods:**
+* `recipe.top_five_reviews` returns a list with the five review instances with the highest rating for the given recipe
+
+Great work!
+
+## Summary
+
+
+Great work! In this lab we created a pretty complex domain model and defined some neat class and instance methods to leverage these has many through relationships. We could see that without these relationships, meaning without a review linking a recipe and a guest, it would become very difficult to organize our information and query it accurately like we do in a class method that gives us the top or bottom three recipes. 
