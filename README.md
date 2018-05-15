@@ -44,6 +44,14 @@ Read through the deliverables below to begin building out the following five cla
 * `dinner_party.highest_rated_recipe()` returns the highest rated recipe for the given dinner party
 * `dinner_party.number_of_attendees()` returns the number of guests who accepted their invite for the dinner party
 
+### Course
+**Class Methods:**
+* `Course.all()` returns a list of all course instances
+
+**Instance Methods:**
+* `course.dinner_party` returns the dinner party instance for the given course
+* `course.recipe` returns the recpipe instance for the given course
+
 ### Review
 **Class Methods:**
 * `Review.all()` returns a list of all invite instances
