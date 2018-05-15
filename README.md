@@ -2,9 +2,9 @@
 # Python - Object Relationships Project
 
 ## Introduction
-In this lab we are going to practice object relationships in Python with an emphasis on has-many-through relationships. We will be building out a domain model for Guests, Invites, Dinner Parties, Recipes, and Reviews. A guest will have a collection of invites, which will relate a guest to a dinner party, thus creating the has many through relationship between a user and a dinner party. Just like any good dinner party there will be more than just one thing to eat, which means that a dinner party will have a collection of recipes. A recipe also has many reviews, which are given directly by guests, so, guests will also have many reviews.
+In this lab we are going to practice object relationships in Python with an emphasis on has-many-through relationships. We will be building out a domain model for Guests, Invites, Dinner Parties, Courses, Recipes, and Reviews. A guest will have a collection of invites, which will relate a guest to a dinner party, thus creating the has many through relationship between a user and a dinner party. Just like any good dinner party there will be more than just one thing to eat, which means that a dinner party will have a collection of courses. Since not all courses will be unique accorss all dinner parties, a recipe will have also have many courses. A recipe also has many reviews, which are given directly by guests, so, guests will also have many reviews as well.
 
-Read through the deliverables below to begin building out the following five classes and to figure out additional information about their relationships. 
+Read through the deliverables below to begin building out these six classes and to figure out additional information about their relationships. 
 > **Note:** You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process. If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.
 
 ## Objectives
@@ -71,8 +71,6 @@ Read through the deliverables below to begin building out the following five cla
 **Instance Methods:**
 * `recipe.reviews()` returns a list of reviews for the given recipe
 * `recipe.top_five_reviews()` returns a list with the five review instances with the highest rating for the given recipe
-
-Great work!
 
 ## Summary
 
