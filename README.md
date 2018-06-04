@@ -2,25 +2,29 @@
 # Python - Object Relationships Project
 
 ## Introduction
-In this lab we are going to practice object relationships in Python with an emphasis on has-many-through relationships. We will be building out a domain model for Guests, Invites, Dinner Parties, Courses, Recipes, and Reviews. A guest will have a collection of invites, which will relate a guest to a dinner party, thus creating the has many through relationship between a user and a dinner party. Just like any good dinner party there will be more than just one thing to eat, which means that a dinner party will have a collection of courses. Since not all courses will be unique accorss all dinner parties, a recipe will have also have many courses. A recipe also has many reviews, which are given directly by guests, so, guests will also have many reviews as well.
+In this lab we are going to practice object relationships in Python with an emphasis on has-many-through relationships. We will be building out a domain model for Guests, Invites, Dinner Parties, Courses, Recipes, and Reviews. A guest will have a collection of invites, which will relate a guest to a dinner party, thus creating the has many through relationship between a user and a dinner party. Just like any good dinner party there will be more than just one thing to eat, which means that a dinner party will have a collection of courses. Since not all courses will be unique accross all dinner parties, a recipe will have also have many courses. A recipe also has many reviews, which are given directly by guests, so, guests will also have many reviews as well.
 
 Read through the deliverables below to begin building out these six classes and to figure out additional information about their relationships. 
-> **Note:** You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process. If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.
+> **Note:** You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process. If you are confused about how the models below relate to each other, it may help to draw this out on a whiteboard before beginning to code.
 
 ## Objectives
 * Define classes according to their approproate relationships
 * Create instance and class methods that leverage the has many through relationships
 
 ### Guest
+
+
 **Class Methods:**
 * `Guest.all()` returns a list of all guest instances
 * `Guest.most_popular()` returns the guest invited to the most dinner parties
 * `Guest.toughest_critic()` returns the guest with lowest average rating for recipe reviews
-* `Guest.most_active_critic()` returns the guest with most amount of recipe reviews
+* `Guest.most_active_critic()` returns the guest with most recipe reviews
 
 **Instance Methods:**
-* `guest.rsvp(invite, rsvp_status)` takes in a boolean value (True or False) and updates a guest's rsvp status. It should return the rsvp_status status
+* `guest.invites()` returns a list of all of the guest's invites
+* `guest.reviews()` returns a list of all of the guest's reviews
 * `guest.number_of_invites()` returns the number of dinner party invites a guest has recieved 
+* `guest.rsvp(invite, rsvp_status)` takes in a boolean value (True or False) and updates a guest's rsvp status. It should return the rsvp_status status
 * `guest.review_recipe(recipe, rating, comment)` adds a guest's review with a rating and comment to a recipe. Returns the given recipe's reviews
 * `guest.favorite_recipe()` returns the given guest's favorite recipe
 
@@ -38,11 +42,14 @@ Read through the deliverables below to begin building out these six classes and 
 * `DinnerParty.all()` returns a list of all dinner party instances
 
 **Instance Methods:**
-* `dinner_party.reviews()` returns a list of reviews for the recipes of a given dinner party
-* `dinner_party.recipes()` returns a list of recipes for the given dinner party
-* `dinner_party.recipe_count()` returns the number of recipes for the given dinner party
-* `dinner_party.highest_rated_recipe()` returns the highest rated recipe for the given dinner party
+* `dinner_party.invites()` returns a list of all of invites handed out for the party
+* `dinner_party.guests()` returns a list of the party's guests
 * `dinner_party.number_of_attendees()` returns the number of guests who accepted their invite for the dinner party
+* `dinner_party.courses()` returns a list of the party's courses
+* `dinner_party.recipes()` returns a list of all the recipes for the courses featured at the given dinner party
+* `dinner_party.recipe_count()` returns the number of recipes for the given dinner party
+* `dinner_party.reviews()` returns a list of reviews for the recipes of a given dinner party
+* `dinner_party.highest_rated_recipe()` returns the highest rated recipe for the given dinner party
 
 ### Course
 **Class Methods:**
